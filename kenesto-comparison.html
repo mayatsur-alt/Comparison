@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenesto – Why We Win</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:   #1B3A8C;
+      --orange: #F26522;
+      --text:   #333333;
+      --muted:  #666666;
+      --light:  #ffffff;
+      --border: #E2E2E2;
+      --white:  #ffffff;
+      --bg:     #EEF2FB;
+      --yes:    #1a7f3c;
+      --no:     #c0392b;
+      --partial:#d68910;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 56px 24px 48px;
+    }
+
+    .logo img {
+      height: 64px;
+      width: auto;
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .hero h1 em { color: var(--text); font-style: normal; }
+    .hero p {
+      font-size: .97rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--orange);
+      border-radius: 3px;
+      padding: 10px 24px;
+      font-size: .92rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .hero-badge strong { color: var(--orange); font-size: 1.1rem; }
+
+    /* ── Price banner ── */
+    .price-banner {
+      background: var(--bg);
+      border-top: 3px solid var(--orange);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 14px 24px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .price-banner strong { color: var(--navy); }
+
+    /* ── Price cards ── */
+    .cards-section {
+      max-width: 1100px;
+      margin: 48px auto 0;
+      padding: 0 20px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+    .cards {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--border);
+      border-radius: 3px;
+      padding: 26px 16px 20px;
+      text-align: center;
+      flex: 1 1 138px;
+      max-width: 170px;
+      box-shadow: 0 0 7px rgba(0,0,0,.06);
+      transition: transform .3s ease, box-shadow .3s ease;
+      position: relative;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0,0,0,.10); }
+    .card.kenesto-card { border-top-color: var(--orange); }
+    .card .company {
+      font-size: .7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 8px;
+    }
+    .kenesto-card .company { color: var(--orange); font-weight: 700; }
+    .card .price {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .kenesto-card .price { color: var(--navy); font-size: 1.7rem; }
+    .card .per { font-size: .7rem; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+    .best-value {
+      position: absolute;
+      top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--orange);
+      color: #fff;
+      font-size: .62rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      letter-spacing: .5px;
+    }
+
+    /* ── Table ── */
+    .table-section {
+      max-width: 1100px;
+      margin: 52px auto 60px;
+      padding: 0 20px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      box-shadow: 0 0 7px rgba(0,0,0,.06);
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 820px;
+      background: var(--white);
+    }
+    thead th {
+      background: var(--light);
+      color: var(--text);
+      padding: 13px 12px;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      white-space: nowrap;
+      border-bottom: 2px solid var(--border);
+    }
+    thead th.k-col {
+      background: var(--white);
+      border-bottom: 3px solid var(--orange);
+      padding: 8px 12px;
+    }
+    thead th.k-col img {
+      height: 32px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    thead th:first-child { text-align: left; }
+
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover td { background: #fafafa; }
+    tbody tr:hover td.k-col { background: #e8edfa; }
+
+    td {
+      padding: 10px 12px;
+      font-size: .84rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+    td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--text);
+      padding-left: 18px;
+    }
+    td.k-col {
+      background: #EEF1FB;
+      font-weight: 700;
+    }
+    .sect-row td {
+      background: var(--bg) !important;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      color: var(--muted);
+      padding: 6px 18px;
+      text-align: left;
+      font-weight: 700;
+      border-top: 1px solid var(--border);
+    }
+
+    .yes  { color: var(--yes);     font-size: 1.1rem; }
+    .no   { color: var(--no);      font-size: 1.1rem; }
+    .par  { color: var(--partial); font-size: .76rem; font-weight: 700; }
+    .txt  { font-size: .76rem; color: var(--muted); }
+    .txt.hi { color: var(--navy); font-weight: 700; font-size: .8rem; }
+
+    /* ── Footer note ── */
+    .footer-note {
+      background: var(--light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .footer-note strong { color: var(--navy); }
+
+    /* ── CTA ── */
+    .cta {
+      background: var(--bg);
+      text-align: center;
+      padding: 56px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .cta h2 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .cta p  { font-size: .93rem; color: var(--muted); max-width: 480px; margin: 0 auto 28px; }
+    .cta-btn {
+      display: inline-block;
+      border: 2px solid var(--navy);
+      color: var(--navy);
+      background: transparent;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: .93rem;
+      font-weight: 700;
+      padding: 12px 34px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: .3px;
+      transition: background .3s ease, color .3s ease;
+    }
+    .cta-btn:hover { background: var(--navy); color: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div class="hero">
+  <div class="logo">
+    <img src="https://www.kenesto.com/wp-content/uploads/2021/11/Kenesto_2C_Logo.png" alt="Kenesto" />
+  </div>
+  <h1>The Smartest Choice for<br/><em>Engineering Document Management</em></h1>
+  <p>Full-featured. Cloud-native. SolidWorks-ready. And the most affordable price on the market.</p>
+  <div class="hero-badge">Only <strong>$300 / user / year</strong> includes native SolidWorks add-in &amp; unlimited storage</div>
+</div>
+
+<!-- ═══════════════ PRICE BANNER ═══════════════ -->
+<div class="price-banner">
+  <strong>Most platforms charge you as your data grows. Kenesto doesn't.</strong><br/>
+  With Kenesto you get unlimited cloud storage, a native SolidWorks add-in, a built-in PDF editor,
+  automatic file locking, vault workflows, and unlimited versioning
+  all for <strong>$300 per user per year</strong>. No surprises. No SQL servers. No sync headaches.
+</div>
+
+<!-- ═══════════════ PRICE CARDS ═══════════════ -->
+<div class="cards-section">
+  <h2 class="section-title">Price per User per Year: How We Compare</h2>
+  <div class="cards">
+
+    <div class="card kenesto-card">
+      <div class="best-value">BEST VALUE</div>
+      <div class="company">Kenesto</div>
+      <div class="price">$300</div>
+      <div class="per">per user<br/>incl. SolidWorks add-in<br/>Unlimited storage</div>
+    </div>
+
+    <div class="card">
+      <div class="company">Dropbox / Google / OneDrive</div>
+      <div class="price">$60–$360</div>
+      <div class="per">per user<br/>No SolidWorks integration</div>
+    </div>
+
+    <div class="card">
+      <div class="company">Egnyte</div>
+      <div class="price">$240–$600</div>
+      <div class="per">per user<br/>No SolidWorks add-in</div>
+    </div>
+
+    <div class="card">
+      <div class="company">Sibe</div>
+      <div class="price">$500–$600</div>
+      <div class="per">per user</div>
+    </div>
+
+    <div class="card">
+      <div class="company">Autodesk Vault</div>
+      <div class="price">$870</div>
+      <div class="per">per user<br/>Primarily on-prem</div>
+    </div>
+
+    <div class="card">
+      <div class="company">SolidWorks PDM</div>
+      <div class="price">$2,400</div>
+      <div class="per">per user<br/>Requires SQL Server</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ FEATURE TABLE ═══════════════ -->
+<div class="table-section">
+  <h2 class="section-title">Full Feature Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:left; width:220px;">Feature</th>
+          <th>Egnyte</th>
+          <th>Sibe</th>
+          <th>Dropbox / Google / OneDrive</th>
+          <th>Autodesk Vault</th>
+          <th>SolidWorks PDM</th>
+          <th class="k-col"><img src="https://www.kenesto.com/wp-content/uploads/2021/11/Kenesto_2C_Logo.png" alt="Kenesto" /></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="sect-row"><td colspan="7">Cloud &amp; Collaboration</td></tr>
+
+        <tr>
+          <td>Cloud-based</td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="par">Primarily on-prem</span></td>
+          <td><span class="no">✘</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>In-browser collaboration &amp; external sharing</td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="no">✘</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Single source of truth, no syncing</td>
+          <td><span class="par">Sync-based</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="par">Sync-based</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Cloud storage</td>
+          <td><span class="txt">Scalable</span></td>
+          <td><span class="txt">Scalable</span></td>
+          <td><span class="txt">Scalable</span></td>
+          <td><span class="txt">Scalable</span></td>
+          <td><span class="txt">Scalable</span></td>
+          <td class="k-col"><span class="txt hi">Unlimited</span></td>
+        </tr>
+
+        <tr class="sect-row"><td colspan="7">SolidWorks Integration</td></tr>
+
+        <tr>
+          <td>Native add-in for SolidWorks</td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>3D viewer</td>
+          <td><span class="par">Limited</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="par">Limited</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Requires SQL Server</td>
+          <td><span class="yes">✘ No</span></td>
+          <td><span class="yes">✘ No</span></td>
+          <td><span class="yes">✘ No</span></td>
+          <td><span class="yes">✘ No</span></td>
+          <td><span class="no">✔ Required</span></td>
+          <td class="k-col"><span class="yes">✘ No</span></td>
+        </tr>
+
+        <tr class="sect-row"><td colspan="7">Version Control &amp; Workflows</td></tr>
+
+        <tr>
+          <td>Version control</td>
+          <td><span class="par">Limited</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="par">Limited</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Unlimited number of versions</td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Revision workflows</td>
+          <td><span class="par">Limited</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>File locking (automatic)</td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="par">Partial</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="par">Forced process</span></td>
+          <td><span class="par">Forced process</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Vault workflow</td>
+          <td><span class="par">Limited</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Track changes &amp; compare versions</td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr class="sect-row"><td colspan="7">Tasks &amp; Permissions</td></tr>
+
+        <tr>
+          <td>Assign pinned tasks to teammates</td>
+          <td><span class="par">Limited</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Advanced user roles &amp; access permissions</td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr class="sect-row"><td colspan="7">Search &amp; Content</td></tr>
+
+        <tr>
+          <td>Search on folders</td>
+          <td><span class="par">Text only</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Search on metadata</td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="yes">✔</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>PDF editor</td>
+          <td><span class="par">Markup only</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="no">✘</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+        <tr>
+          <td>Categories</td>
+          <td><span class="no">✘</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="no">✘</span></td>
+          <td><span class="yes">✔</span></td>
+          <td><span class="no">✘</span></td>
+          <td class="k-col"><span class="yes">✔</span></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<div class="cta">
+  <h2>Ready to make the switch?</h2>
+  <p>Kenesto gives your engineering team everything they need, at the price that makes sense.</p>
+  <a href="#" class="cta-btn">Get Started with Kenesto →</a>
+</div>
+
+</body>
+</html>
